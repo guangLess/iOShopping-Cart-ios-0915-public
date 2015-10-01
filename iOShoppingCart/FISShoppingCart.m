@@ -35,17 +35,27 @@
     
 }
 -(void)removeAllItemsLikeItem:(FISItem *)item{
+   
     
-    NSInteger x = 0 ;
-    NSMutableArray * removedItem = [[NSMutableArray alloc] init];
+//    NSInteger x = 0 ;
+//
+//    
+//    for (FISItem * item in self.items) {
+//         x = [self.items indexOfObject:item];
+//         removedItem = self.items;
+//        [removedItem removeObjectAtIndex: x ];
+//    }
+//    self.items = removedItem;
     
-    for (FISItem * item in self.items) {
-         removedItem = self.items;
-         x = [self.items indexOfObject:item];
-        [removedItem removeObjectAtIndex: x ];
+    NSMutableArray * removedItem = [self.items mutableCopy];
 
+    for (FISItem * anItem in self.items) {
+        if (anItem == item ){
+           [removedItem removeObject:anItem];
+        }
     }
-    self.items = removedItem;
+    
+    self.items = removedItem ;
 }
 
 -(void)sortItemsByNameAsc{
@@ -123,10 +133,6 @@
     
     NSPredicate * itemPricePredicate = [NSPredicate predicateWithFormat:@"priceInCents <= %i",number];
     return [self.items filteredArrayUsingPredicate:itemPricePredicate];
-
 }
-
-
-
 
 @end
