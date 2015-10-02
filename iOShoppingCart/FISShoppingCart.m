@@ -24,10 +24,10 @@
 
 -(NSUInteger)calculateTotalPriceInCents{
     
-    FISItem * item = [[FISItem alloc] init];
+    //FISItem * item = [[FISItem alloc] init]; filter opration
     NSUInteger sum = 0 ;
     
-    for ( item in self.items) {
+    for (FISItem *item in self.items) {
         sum = item.priceInCents + sum ;
     }
     
