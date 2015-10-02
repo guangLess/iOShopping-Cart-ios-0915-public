@@ -19,5 +19,9 @@
     }
     return self;
 }
-
+/*/ -(returnType)nameOfTheMethodPart1:(argument type 1)argumentName
+                                part2:(argument type 2)argumentName2...
+ 
+ 
+*/
 @end

@@ -10,6 +10,16 @@
 
 @implementation FISShoppingCart
 
+//added
+-(instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _items = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 
 
 -(NSUInteger)calculateTotalPriceInCents{
